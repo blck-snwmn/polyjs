@@ -116,7 +116,16 @@ if (import.meta.main) {
 
   const imageWidth = imageData.width;
   const imageHeight = imageData.height;
-  const numPoints = 100; // TODO: Make this configurable or adaptive
+
+  // Adjust point density based on image area
+  // This value can be tuned to control the density of points.
+  // Smaller value means sparser points, larger value means denser points.
+  const POINTS_DENSITY = 0.006; // Increased from 0.001. e.g., for an 800x600 image, this results in 800*600*0.005 = 2400 points
+  const imageArea = imageWidth * imageHeight;
+  const numPoints = Math.max(50, Math.round(imageArea * POINTS_DENSITY)); // Ensure at least 50 points
+
+  console.log(`Image dimensions: ${imageWidth}x${imageHeight}, Area: ${imageArea}`);
+  console.log(`Calculated number of points based on density (${POINTS_DENSITY}): ${numPoints}`);
 
   const randomPoints = generateRandomPoints(imageWidth, imageHeight, numPoints);
   console.log("Generated random points:", randomPoints.length);
