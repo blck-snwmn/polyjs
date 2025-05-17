@@ -64,6 +64,24 @@ function getTriangleColor(
   return `rgb(${r},${g},${b})`;
 }
 
+interface Triangle {
+  p1: number[];
+  p2: number[];
+  p3: number[];
+  color: string;
+}
+
+// Function to generate SVG string
+function generateSvg(triangles: Triangle[], width: number, height: number): string {
+  let svgString = `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">\n`;
+  for (const tri of triangles) {
+    const points = `${tri.p1[0]},${tri.p1[1]} ${tri.p2[0]},${tri.p2[1]} ${tri.p3[0]},${tri.p3[1]}`;
+    svgString += `  <polygon points="${points}" fill="${tri.color}" />\n`;
+  }
+  svgString += `</svg>`;
+  return svgString;
+}
+
 // Learn more at https://docs.deno.com/runtime/manual/examples/module_metadata#concepts
 if (import.meta.main) {
   console.log("Add 2 + 3 =", add(2, 3));
@@ -110,7 +128,7 @@ if (import.meta.main) {
   console.log("Number of triangles:", triangles.length / 3);
 
   // Process each triangle
-  const outputTriangles = [];
+  const outputTriangles: Triangle[] = [];
   for (let i = 0; i < triangles.length; i += 3) {
     // const tIndex = i / 3; // Not used for now
     const p1Index = triangles[i];
@@ -127,7 +145,18 @@ if (import.meta.main) {
     // TODO: Render this triangle with the calculated color
   }
   console.log(`Processed ${outputTriangles.length} triangles.`);
-  console.log("Low poly generation process (concept) finished.");
+
+  const svgOutput = generateSvg(outputTriangles, imageWidth, imageHeight);
+  const outputFilename = "output.svg";
+  try {
+    await Deno.writeTextFile(outputFilename, svgOutput);
+    console.log(`SVG written to ${outputFilename}`);
+  } catch (error: any) {
+    console.error(`Error writing SVG file: ${error.message}`);
+    Deno.exit(1);
+  }
+
+  console.log("Low poly generation process finished.");
   console.log("Next steps: Implement rendering of these triangles (e.g., to SVG or canvas).");
   // Example: console.log(outputTriangles.slice(0, 2)); // Log first two triangles for inspection
 }
