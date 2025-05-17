@@ -1,7 +1,13 @@
 {
   "version": "4",
   "specifiers": {
+    "jsr:@unpic/pixels@*": "1.2.3",
     "npm:delaunator@5.0.0": "5.0.0"
+  },
+  "jsr": {
+    "@unpic/pixels@1.2.3": {
+      "integrity": "7282e7fe77b6efaf345382f1443ca08f6494103c258ded90f7aade1f221df63c"
+    }
   },
   "npm": {
     "delaunator@5.0.0": {
@@ -49,7 +55,9 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@std/assert@1"
+      "jsr:@std/assert@1",
+      "jsr:@unpic/pixels@*",
+      "npm:delaunator@5.0.0"
     ]
   }
 }

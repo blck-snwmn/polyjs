@@ -5,6 +5,7 @@
   },
   "imports": {
     "@std/assert": "jsr:@std/assert@1",
-    "delaunator": "npm:delaunator@5.0.0"
+    "delaunator": "npm:delaunator@5.0.0",
+    "@unpic/pixels": "jsr:@unpic/pixels"
   }
 }
