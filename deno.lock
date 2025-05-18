@@ -4,7 +4,7 @@
     "jsr:@std/assert@1": "1.0.13",
     "jsr:@std/internal@^1.0.6": "1.0.6",
     "jsr:@unpic/pixels@*": "1.2.3",
-    "npm:delaunator@5.0.0": "5.0.0"
+    "npm:delaunator@^5.0.1": "5.0.1"
   },
   "jsr": {
     "@std/assert@1.0.13": {
@@ -21,8 +21,8 @@
     }
   },
   "npm": {
-    "delaunator@5.0.0": {
-      "integrity": "sha512-AyLvtyJdbv/U1GkiS6gUUzclRoAY4Gs75qkMygJJhU75LW4DNuSF2RMzpxs9jw9Oz1BobHjTdkG3zdP55VxAqw==",
+    "delaunator@5.0.1": {
+      "integrity": "sha512-8nvh+XBe96aCESrGOqMp/84b13H9cdKbG5P2ejQCh4d4sK9RL4371qou9drQjMhvnPmhWl5hnmqbEE0fXr9Xnw==",
       "dependencies": [
         "robust-predicates"
       ]
@@ -68,7 +68,7 @@
     "dependencies": [
       "jsr:@std/assert@1",
       "jsr:@unpic/pixels@*",
-      "npm:delaunator@5.0.0"
+      "npm:delaunator@^5.0.1"
     ]
   }
 }
