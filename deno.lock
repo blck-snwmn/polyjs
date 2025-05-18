@@ -1,10 +1,21 @@
 {
   "version": "4",
   "specifiers": {
+    "jsr:@std/assert@1": "1.0.13",
+    "jsr:@std/internal@^1.0.6": "1.0.6",
     "jsr:@unpic/pixels@*": "1.2.3",
     "npm:delaunator@5.0.0": "5.0.0"
   },
   "jsr": {
+    "@std/assert@1.0.13": {
+      "integrity": "ae0d31e41919b12c656c742b22522c32fb26ed0cba32975cb0de2a273cb68b29",
+      "dependencies": [
+        "jsr:@std/internal"
+      ]
+    },
+    "@std/internal@1.0.6": {
+      "integrity": "9533b128f230f73bd209408bb07a4b12f8d4255ab2a4d22a1fd6d87304aca9a4"
+    },
     "@unpic/pixels@1.2.3": {
       "integrity": "7282e7fe77b6efaf345382f1443ca08f6494103c258ded90f7aade1f221df63c"
     }
