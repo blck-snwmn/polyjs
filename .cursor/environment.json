@@ -1,0 +1,8 @@
+{
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
+  "terminals": [],
+  "install": "curl -fsSL https://deno.land/x/install/install.sh | sh"
+}
