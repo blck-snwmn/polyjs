@@ -1,4 +1,3 @@
-import { readLines } from "https://deno.land/std@0.224.0/io/mod.ts";
 import Delaunator from "npm:delaunator@5.0.0";
 import { getPixels, getFormat } from "@unpic/pixels";
 
@@ -109,8 +108,12 @@ if (import.meta.main) {
       format: format,
     };
     console.log(`Image loaded: ${imageData.width}x${imageData.height}, Format: ${imageData.format}`);
-  } catch (error: any) {
-    console.error(`Error loading or decoding image: ${error.message}`);
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error(`Error loading or decoding image: ${error.message}`);
+    } else {
+      console.error(`An unknown error occurred while loading or decoding image.`);
+    }
     Deno.exit(1);
   }
 
@@ -160,8 +163,12 @@ if (import.meta.main) {
   try {
     await Deno.writeTextFile(outputFilename, svgOutput);
     console.log(`SVG written to ${outputFilename}`);
-  } catch (error: any) {
-    console.error(`Error writing SVG file: ${error.message}`);
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error(`Error writing SVG file: ${error.message}`);
+    } else {
+      console.error(`An unknown error occurred while writing SVG file.`);
+    }
     Deno.exit(1);
   }
 
