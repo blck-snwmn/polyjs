@@ -1,5 +1,5 @@
 {
-  "build": {},
-  "terminals": [],
-  "install": "deno install"
+  "snapshot": "snapshot-20250518-eaaed55d-ae41-4933-a46f-94142622bded",
+  "install": "deno install",
+  "terminals": []
 }
