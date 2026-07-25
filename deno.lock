@@ -1,34 +1,34 @@
 {
-  "version": "4",
+  "version": "5",
   "specifiers": {
-    "jsr:@std/assert@1": "1.0.13",
-    "jsr:@std/internal@^1.0.6": "1.0.6",
+    "jsr:@std/assert@1.0.19": "1.0.19",
+    "jsr:@std/internal@^1.0.12": "1.0.14",
     "jsr:@unpic/pixels@*": "1.2.3",
-    "npm:delaunator@^5.0.1": "5.0.1"
+    "npm:delaunator@5.1.0": "5.1.0"
   },
   "jsr": {
-    "@std/assert@1.0.13": {
-      "integrity": "ae0d31e41919b12c656c742b22522c32fb26ed0cba32975cb0de2a273cb68b29",
+    "@std/assert@1.0.19": {
+      "integrity": "eaada96ee120cb980bc47e040f82814d786fe8162ecc53c91d8df60b8755991e",
       "dependencies": [
         "jsr:@std/internal"
       ]
     },
-    "@std/internal@1.0.6": {
-      "integrity": "9533b128f230f73bd209408bb07a4b12f8d4255ab2a4d22a1fd6d87304aca9a4"
+    "@std/internal@1.0.14": {
+      "integrity": "291516b3d4c35024d6ffbc0a9df5bf4c64116e05b50012cf846710152d2ffdf7"
     },
     "@unpic/pixels@1.2.3": {
       "integrity": "7282e7fe77b6efaf345382f1443ca08f6494103c258ded90f7aade1f221df63c"
     }
   },
   "npm": {
-    "delaunator@5.0.1": {
-      "integrity": "sha512-8nvh+XBe96aCESrGOqMp/84b13H9cdKbG5P2ejQCh4d4sK9RL4371qou9drQjMhvnPmhWl5hnmqbEE0fXr9Xnw==",
+    "delaunator@5.1.0": {
+      "integrity": "sha512-AGrQ4QSgssa1NGmWmLPqN5NY2KajF5MqxetNEO+o0n3ZwZZeTmt7bBnvzHWrmkZFxGgr4HdyFgelzgi06otLuQ==",
       "dependencies": [
         "robust-predicates"
       ]
     },
-    "robust-predicates@3.0.2": {
-      "integrity": "sha512-IXgzBWvWQwE6PrDI05OvmXUIruQTcoMDzRsOd5CDvHCVLcLHMTSYvOK5Cm46kWqlV3yAbuSpBZdJ5oP5OUoStg=="
+    "robust-predicates@3.0.3": {
+      "integrity": "sha512-NS3levdsRIUOmiJ8FZWCP7LG3QpJyrs/TE0Zpf1yvZu8cAJJ6QMW92H1c7kWpdIHo8RvmLxN/o2JXTKHp74lUA=="
     }
   },
   "remote": {
@@ -66,9 +66,9 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@std/assert@1",
+      "jsr:@std/assert@1.0.19",
       "jsr:@unpic/pixels@*",
-      "npm:delaunator@^5.0.1"
+      "npm:delaunator@5.1.0"
     ]
   }
 }
